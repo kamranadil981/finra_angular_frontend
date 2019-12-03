@@ -1,0 +1,14 @@
+
+  <input #id placeholder="Enter the phone number" >
+  <button (click)="senddata(id.value)">search</button>
+
+
+<div>
+    <p>Totalcount:{{result.count}}</p>
+  </div>
+  <div *ngFor="let game  of result.data | paginate :{ itemsPerPage:15,currentPage:p}; let i =index ">
+    <p>{{game}}</p>
+  </div> 
+  
+  
+<pagination-controls (pageChange) ="p =$event"></pagination-controls>
